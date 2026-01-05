@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import "./app.css";
+import { Navigation } from "@/components/shared/navigation";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,7 +32,8 @@ export function Layout({ children }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="lg:p-4">
+        <Navigation />
         {children}
         <ScrollRestoration />
         <Scripts />
