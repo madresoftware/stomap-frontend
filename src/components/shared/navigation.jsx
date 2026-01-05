@@ -2,8 +2,8 @@ export function Navigation() {
   return (
     <>
       {/* mobile */}
-      <header className="block lg:hidden bg-blue-400 rounded-b-3xl">
-        <nav className="h-16 w-full mx-auto">
+      <header className="block lg:hidden">
+        <nav className="bg-blue-400 rounded-b-3xl fixed top-0 h-16 w-full mx-auto">
         </nav>
       </header>
 
