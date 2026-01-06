@@ -32,8 +32,9 @@ export function Layout({ children }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="isolate">
         <Navigation />
+        <div className="absolute top-0 left-0 w-full h-64 bg-blue-200 -z-10"></div>
         {children}
         <ScrollRestoration />
         <Scripts />

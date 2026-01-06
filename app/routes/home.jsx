@@ -6,7 +6,7 @@ export function meta() {
 }
 
 export default function Home() {
-  return <div className="hero"><h1>Home</h1>
+  return <div><h1>Home</h1>
     <div>Home</div>
     <div>Home</div>
     <div>Home</div>
