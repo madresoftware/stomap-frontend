@@ -82,7 +82,7 @@ export function Navigation() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="bg-red-200 p-2 rounded-lg"
+                  className="hover:bg-red-200 p-2 rounded-2xl"
                 >
                   {link.name}
                 </Link>
