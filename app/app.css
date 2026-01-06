@@ -30,7 +30,7 @@ body {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.61 0.11 222);
+  --primary: oklch(60.957% 0.10987 222.07);
   --primary-foreground: oklch(0.98 0.02 201);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -148,4 +148,22 @@ body {
   html {
     @apply font-sans;
   }
+}
+
+.hero {
+  /* 1. Set the image path */
+  background-image: url('@/assets/hero.png');
+
+  /* 2. Scale the image to fill the container without stretching */
+  background-size: cover; 
+
+  /* 3. Center the image so the main subject is visible */
+  background-position: center;
+
+  /* 4. Ensure it doesn't tile */
+  background-repeat: no-repeat;
+
+  /* 5. Set height (e.g., 100% of viewport height) */
+  height: 100vh; 
+  
 }
