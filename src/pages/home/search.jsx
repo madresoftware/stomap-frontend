@@ -1,37 +1,50 @@
 import { useState } from "react"
-import { Form } from "react-router"
+import { Form, Link } from "react-router"
+import DamagedTooth from "../../assets/icons/damaged-tooth.svg?react"
 
 const filters = [
-  { label: "Toate", value: "all" },
-  { label: "Cabinete", value: "office" },
-  { label: "Clinici", value: "clinic" },
-  { label: "Radiologie", value: "xray" },
+  { label: "Toate", value: "all", placeholder: "Caută servicii..." },
+  {
+    label: "Cabinete",
+    value: "office",
+    placeholder: "Caută cabinete de stomatologie...",
+  },
+  {
+    label: "Clinici",
+    value: "clinic",
+    placeholder: "Caută clinici de stomatologie...",
+  },
+  {
+    label: "Radiologie",
+    value: "xray",
+    placeholder: "Caută laboratoare de radiologie...",
+  },
 ]
 
 export default function Search() {
-  const [selectedFilter, setSelectedFilter] = useState("all")
+  const [selectedFilter, setSelectedFilter] = useState(filters[0])
 
   return (
-    <div className="max-w-xl px-4 py-8 md:p-8 flex flex-col gap-4 mx-auto rounded-lg">
+    <div className="max-w-xl px-4 py-8 md:p-8 flex flex-col gap-4 mx-auto font-medium text-black">
       <h1 className="text-5xl text-center">
         Găsește serviciile stomatologice potrivite
       </h1>
 
       <Form action="/exploreaza" method="get" className="flex flex-col gap-4">
         {/* 3. Hidden Input to send the selection to the server */}
-        <input type="hidden" name="category" value={selectedFilter} />
+        <input type="hidden" name="c" value={selectedFilter.value} />
         {/* 4. The Button Group */}
         <div className="inline-flex w-full gap-4" role="group">
           {filters.map((filter) => {
-            const isActive = selectedFilter === filter.value
+            const isActive = selectedFilter.value === filter.value
 
             return (
               <button
                 key={filter.value}
                 type="button"
-                onClick={() => setSelectedFilter(filter.value)}
+                onClick={() => setSelectedFilter(filter)}
                 className={`
-                    flex-1 px-2 py-1 text-sm rounded-md max-w-fit
+                    flex-1 px-2 py-1 text-sm rounded-2xl max-w-fit
                     ${/* Active vs Inactive Styles */ ""}
                     ${
                       isActive
@@ -49,18 +62,25 @@ export default function Search() {
           <input
             name="q"
             type="text"
-            placeholder="Cauta..."
-            className="bg-white p-4 w-full rounded-md text-black"
+            placeholder={selectedFilter.placeholder}
+            className="bg-white p-4 w-full rounded-2xl text-black"
           />
 
           <button
             type="submit"
-            className="bg-black text-white font-bold p-4 rounded-md transition-colors"
+            className="bg-black text-white font-bold p-4 rounded-2xl transition-colors"
           >
             Caută
           </button>
         </div>
-        Ai o urgenta?
+        <Link
+          key="urgenta"
+          to={"/urgenta"}
+          className="bg-warning hover:bg-warning-lighter text-white w-full py-4 px-8 rounded-2xl font-black flex justify-center items-center gap-2"
+        >
+          <DamagedTooth className="w-4 block size-max" />
+          Ai o urgență?
+        </Link>
       </Form>
     </div>
   )

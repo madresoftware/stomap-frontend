@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 html,
 body {
@@ -16,14 +16,24 @@ body {
 
 :root {
   --window-border: #ffffff;
+  --warning: #ed2839;
+  --warning-darker: #da1222;
+  --warning-lighter: #f04553;
 }
 
 .dark {
   --window-border: #ffffff;
+
+  --warning: #ed2839;
+  --warning-darker: #da1222;
+  --warning-lighter: #f04553;
 }
 
 @theme inline {
   --color-window-border: var(--window-border);
+  --color-warning: var(--warning);
+  --color-warning-darker: var(--warning-darker);
+  --color-warning-lighter: var(--warning-lighter);
 }
 
 body {
