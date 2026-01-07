@@ -3,7 +3,7 @@ import { Form, Link } from "react-router"
 import DamagedTooth from "../../assets/icons/damaged-tooth.svg?react"
 
 const filters = [
-  { label: "Toate", value: "all", placeholder: "Caută servicii..." },
+  { label: "Toate", placeholder: "Caută servicii..." },
   {
     label: "Cabinete",
     value: "office",
@@ -25,7 +25,7 @@ export default function Search() {
   const [selectedFilter, setSelectedFilter] = useState(filters[0])
 
   return (
-    <div className="max-w-xl px-4 py-8 md:p-8 flex flex-col gap-4 mx-auto font-medium text-black">
+    <div className="mx-4 max-w-xl px-4 py-8 md:p-8 flex flex-col gap-4 font-medium text-black bg-white rounded-3xl">
       <h1 className="text-5xl text-center">
         Găsește serviciile stomatologice potrivite
       </h1>
@@ -44,7 +44,7 @@ export default function Search() {
                 type="button"
                 onClick={() => setSelectedFilter(filter)}
                 className={`
-                    flex-1 px-2 py-1 text-sm rounded-2xl max-w-fit
+                    flex-1 px-2 py-1 text-sm rounded-2xl max-w-fit border
                     ${/* Active vs Inactive Styles */ ""}
                     ${
                       isActive
@@ -63,7 +63,7 @@ export default function Search() {
             name="q"
             type="text"
             placeholder={selectedFilter.placeholder}
-            className="bg-white p-4 w-full rounded-2xl text-black"
+            className="bg-white p-4 w-full rounded-2xl text-black border"
           />
 
           <button
