@@ -25,7 +25,7 @@ export default function Search() {
   const [selectedFilter, setSelectedFilter] = useState(filters[0])
 
   return (
-    <div className="mx-4 max-w-xl px-4 py-8 md:p-8 flex flex-col gap-4 font-medium text-black bg-white rounded-3xl">
+    <>
       <h1 className="text-5xl text-center">
         Găsește serviciile stomatologice potrivite
       </h1>
@@ -35,12 +35,12 @@ export default function Search() {
         <input type="hidden" name="c" value={selectedFilter.value} />
         {/* 4. The Button Group */}
         <div className="inline-flex w-full gap-4" role="group">
-          {filters.map((filter) => {
+          {filters.map((filter, index) => {
             const isActive = selectedFilter.value === filter.value
 
             return (
               <button
-                key={filter.value}
+                key={index}
                 type="button"
                 onClick={() => setSelectedFilter(filter)}
                 className={`
@@ -73,15 +73,7 @@ export default function Search() {
             Caută
           </button>
         </div>
-        <Link
-          key="urgenta"
-          to={"/urgenta"}
-          className="bg-warning hover:bg-warning-lighter text-white w-full py-4 px-8 rounded-2xl font-black flex justify-center items-center gap-2"
-        >
-          <DamagedTooth className="w-4 block size-max" />
-          Ai o urgență?
-        </Link>
       </Form>
-    </div>
+    </>
   )
 }

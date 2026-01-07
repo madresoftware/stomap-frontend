@@ -5,12 +5,5 @@ export function meta() {
 }
 
 export default function Home() {
-  return (
-    <>
-      <HomePage />
-      <HomePage />
-      <HomePage />
-      <HomePage />
-    </>
-  )
+  return <HomePage />
 }
