@@ -1,28 +1,30 @@
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 import React, { useState } from "react"
-import logo from "../../assets/logo.png"
+import Logo from "../../assets/branding/logo.svg?react"
+
+const links = [
+  {
+    name: "Explorează",
+    href: "/exploreaza",
+  },
+]
 
 export function Navigation() {
-  const links = [
-    {
-      name: "Explorează",
-      href: "/exploreaza",
-    },
-  ]
   const [isOpen, setIsOpen] = useState(false)
-
   const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+
+  const location = useLocation()
+  const isActive = (path) => location.pathname === path
+
   return (
     <>
       {/* mobile */}
       <header className="block md:hidden fixed top-0 w-full z-50 text-sm">
-        <nav className="bg-white rounded-b-3xl shadow-lg w-full overflow-hidden">
+        <nav className="bg-white rounded-b-3xl drop-shadow-xs w-full overflow-hidden">
           <div className="h-16 flex items-center justify-between px-4 relative z-20">
-            <Link to="/">
-              <img src={logo} alt="logo" className="w-24" />
+            <Link key={"logo"} to={"/"}>
+              <Logo className="max-h-fit w-28" />
             </Link>
-
             <button
               onClick={toggleMenu}
               className="w-10 h-10 relative flex justify-center items-center text-black focus:outline-none"
@@ -66,23 +68,35 @@ export function Navigation() {
 
       {/* desktop */}
       <header className="hidden md:block text-sm">
-        <div className="fixed inset-4 z-50 pointer-events-none rounded-3xl shadow-[0_0_0_100vmax_theme(colors.window-border)]"></div>
+        <div className="fixed inset-4 z-51 pointer-events-none rounded-3xl shadow-[0_0_0_100vmax_var(--color-window-border)]"></div>
 
-        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-[50] h-20 bg-window-border w-128 lg:w-180 xl:w-250 rounded-b-3xl">
-          <div className="absolute -left-6 top-0 w-6 h-6 bg-[radial-gradient(circle_at_0%_100%,transparent_1.5rem,theme(colors.window-border)_1.5rem)]"></div>
+        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 h-20 bg-window-border w-xl rounded-b-3xl shadow-xs">
+          {/* Left Wing SVG */}
+          <svg
+            className="absolute -left-6 top-0 w-6 h-6 text-window-border fill-current"
+            viewBox="0 0 24 24"
+          >
+            <path d="M24 24 A 24 24 0 0 0 0 0 L 24 0 Z" />
+          </svg>
 
-          <div className="absolute -right-6 top-0 w-6 h-6 bg-[radial-gradient(circle_at_100%_100%,transparent_1.5rem,theme(colors.window-border)_1.5rem)]"></div>
+          {/* Right Wing SVG */}
+          <svg
+            className="absolute -right-6 top-0 w-6 h-6 text-window-border fill-current"
+            viewBox="0 0 24 24"
+          >
+            <path d="M0 24 A 24 24 0 0 1 24 0 L 0 0 Z" />
+          </svg>
 
-          <div className="flex justify-between items-center h-full gap-8 px-16">
+          <div className="flex justify-between items-center h-full gap-8 px-4">
             <Link key={"logo"} to={"/"}>
-              <img src={logo} alt="logo" className="w-24" />
+              <Logo className="max-h-fit w-28" />
             </Link>
             <div className="flex gap-8">
               {links.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="hover:bg-red-200 p-2 rounded-2xl"
+                  className={`hover:bg-black hover:text-white px-2 py-1 rounded-2xl text-black ${isActive(link.href) ? "bg-black text-white" : ""}`}
                 >
                   {link.name}
                 </Link>

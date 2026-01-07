@@ -5,23 +5,19 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+} from "react-router"
 
-import "./app.css";
-import { Navigation } from "@/components/shared/navigation";
+import "./app.css"
+import { Navigation } from "@/components/shared/navigation"
 
 export const links = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: "icon", href: "/favicon.ico" },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    rel: "icon",
+    href: "/favicon-dark.ico",
+    media: "(prefers-color-scheme: dark)",
   },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-];
+]
 
 export function Layout({ children }) {
   return (
@@ -34,33 +30,33 @@ export function Layout({ children }) {
       </head>
       <body className="isolate">
         <Navigation />
-        <div className="absolute top-0 left-0 w-full h-64 bg-blue-200 -z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-64  -z-10"></div>
         {children}
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
-  return <Outlet />;
+  return <Outlet />
 }
 
 export function ErrorBoundary({ error }) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack;
+  let message = "Oops!"
+  let details = "An unexpected error occurred."
+  let stack
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? "404" : "Error"
     details =
       error.status === 404
         ? "The requested page could not be found."
-        : error.statusText || details;
+        : error.statusText || details
   } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
+    details = error.message
+    stack = error.stack
   }
 
   return (
@@ -73,5 +69,5 @@ export function ErrorBoundary({ error }) {
         </pre>
       )}
     </main>
-  );
+  )
 }

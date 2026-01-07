@@ -1,67 +1,9 @@
+import HomePage from "@/pages/home"
+
 export function meta() {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+  return [{ title: "stomap" }]
 }
 
 export default function Home() {
-  return <div><h1>Home</h1>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-    <div>Home</div>
-  </div>;
+  return <HomePage />
 }
