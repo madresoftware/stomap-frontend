@@ -8,18 +8,16 @@ export default function ExplorePage() {
   const { providers } = useLoaderData()
 
   return (
-    <>
-      <div className="h-16 md:h-24 bg-blue-400"></div>
-      <div className="flex flex-col items-center h-full max-w-xl mx-auto">
+    <div className="bg-green-200 size-full px-5">
+      <div className="h-16 md:h-24"></div>
+      <div className="mx-auto flex flex-col items-center h-full max-w-5xl">
         <Filters />
-        <div className="flex items-center justify-center w-full">
-          <ul className="w-xl flex gap-2 flex-col h-full">
-            {providers.map((provider) => (
-              <Provider provider={provider} key={provider.id} />
-            ))}
-          </ul>
-        </div>
+        <ul className="size-full grid md:grid-cols-2 gap-4 bg-red-400">
+          {providers.map((provider) => (
+            <Provider provider={provider} key={provider.id} />
+          ))}
+        </ul>
       </div>
-    </>
+</div>
   )
 }

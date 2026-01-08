@@ -5,8 +5,11 @@ export function meta() {
   return [{ title: "Exploreaza" }]
 }
 
-export async function loader() {
-  const providers = await providersService.getAll()
+export async function loader({request}) {
+  const url = new URL(request.url);
+  const query = url.searchParams
+
+  const providers = await providersService.getAll(query.get("q") || "")
   return { providers }
 }
 
