@@ -12,12 +12,12 @@ export default function ExplorePage() {
       <div className="h-16 md:h-24"></div>
       <div className="mx-auto flex flex-col items-center h-full max-w-5xl">
         <Filters />
-        <ul className="size-full grid md:grid-cols-2 gap-4 bg-red-400">
+        <ul className="size-full grid md:grid-cols-2 gap-4">
           {providers.map((provider) => (
             <Provider provider={provider} key={provider.id} />
           ))}
         </ul>
       </div>
-</div>
+    </div>
   )
 }

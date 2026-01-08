@@ -19,9 +19,9 @@ export function Navigation() {
   return (
     <>
       {/* mobile */}
-      <header className="block md:hidden fixed top-0 w-full z-50 text-sm">
+      <header className="block md:hidden fixed top-0 w-full z-10 text-sm">
         <nav className="bg-white rounded-b-3xl drop-shadow-xs w-full overflow-hidden">
-          <div className="h-16 flex items-center justify-between px-4 relative z-20">
+          <div className="h-16 flex items-center justify-between px-4 relative z-10">
             <Link key={"logo"} to={"/"}>
               <Logo className="max-h-fit w-28" />
             </Link>
@@ -68,9 +68,9 @@ export function Navigation() {
 
       {/* desktop */}
       <header className="hidden md:block text-sm">
-        <div className="fixed inset-4 z-51 pointer-events-none rounded-2xl shadow-[0_0_0_100vmax_var(--color-window-border)]"></div>
+        <div className="fixed inset-4 z-10 pointer-events-none rounded-2xl shadow-[0_0_0_100vmax_var(--color-window-border)]"></div>
 
-        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 h-20 bg-window-border w-xl rounded-b-3xl shadow-xs">
+        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-10 h-20 bg-window-border w-xl rounded-b-3xl shadow-xs">
           {/* Left Wing SVG */}
           <svg
             className="absolute -left-6 top-0 w-6 h-6 text-window-border fill-current"
