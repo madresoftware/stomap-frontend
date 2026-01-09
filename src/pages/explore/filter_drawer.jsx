@@ -20,6 +20,7 @@ export default function FilterDrawer() {
   return (
     <div className="inline-flex gap-4">
       <button
+        type='button'
         className="bg-white border text-black rounded-2xl px-6 py-2 text-sm flex items-center gap-2"
         onClick={() => setOpenDrawer(true)}
       >
@@ -47,6 +48,7 @@ export default function FilterDrawer() {
           <div className="flex items-center justify-between p-4 border-b">
             <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
             <button
+              type='button'
               onClick={() => setOpenDrawer(false)}
               className="p-2 rounded-full text-black hover:bg-black hover:text-white"
             >

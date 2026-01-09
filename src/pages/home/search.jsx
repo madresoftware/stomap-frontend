@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { Form, Link } from "react-router"
-import DamagedTooth from "../../assets/icons/damaged-tooth.svg?react"
+import { Form } from "react-router"
 
 const filters = [
   { label: "Toate", placeholder: "Caută servicii..." },
