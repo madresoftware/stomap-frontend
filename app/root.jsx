@@ -9,6 +9,7 @@ import {
 
 import "./app.css"
 import { Navigation } from "@/components/shared/navigation"
+import { Footer } from "@/components/shared/footer"
 
 export const links = () => [
   { rel: "icon", href: "/favicon.ico" },
@@ -37,6 +38,7 @@ export function Layout({ children }) {
         <Navigation />
         <div className="absolute top-0 left-0 w-full h-64  -z-10"></div>
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

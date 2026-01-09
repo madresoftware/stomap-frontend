@@ -3,7 +3,7 @@ import NavigateIcon from '../../assets/icons/navigate.svg?react'
 
 const categoryColors = {
   "clinic": "bg-blue-500",
-  "office": "bg-yellow-500",
+  "cabinet": "bg-yellow-500",
   "xray": "bg-red-500"
 }
 
