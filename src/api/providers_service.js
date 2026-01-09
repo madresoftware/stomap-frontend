@@ -1,8 +1,8 @@
-import { turso } from "../db/connection";
+import apiClient from "./client";
 
 export const providersService = {
   getAll: async (query) => {
-    const response = await turso.execute("SELECT * FROM providers");
-    return response.rows;
+    const response = await apiClient.get(`/providers?q=${query}`);
+    return response.data;
   }
 };

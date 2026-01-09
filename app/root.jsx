@@ -13,6 +13,11 @@ import { Navigation } from "@/components/shared/navigation"
 export const links = () => [
   { rel: "icon", href: "/favicon.ico" },
   {
+    rel: "apple-touch-icon",
+    href: "/apple-touch-icon.png",
+    sizes: "180x180",
+  },
+  {
     rel: "icon",
     href: "/favicon-dark.ico",
     media: "(prefers-color-scheme: dark)",
