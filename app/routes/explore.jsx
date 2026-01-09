@@ -1,16 +1,20 @@
 import ExplorePage from "@/pages/explore"
-import { providersService } from "@/api/providers_service"
+// import { providersService } from "@/api/providers_service"
+import { turso } from "@/db/connection";
 
 export function meta() {
   return [{ title: "Exploreaza" }]
 }
 
 export async function loader({request}) {
-  const url = new URL(request.url);
-  const query = url.searchParams
+  // const url = new URL(request.url);
+  // const query = url.searchParams
 
-  const providers = await providersService.getAll(query.get("q") || "")
-  return { providers }
+  // const providers = await providersService.getAll(query.get("q") || "")
+
+  const providers = await turso.execute("SELECT * FROM providers");
+
+  return { providers: providers.rows }
 }
 
 export default function Explore() {
