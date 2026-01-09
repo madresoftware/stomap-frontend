@@ -7,7 +7,7 @@ export default function Filters() {
   return (
     <Form
       role="search"
-      className="w-full flex flex-wrap py-4 border-b border-black gap-6"
+      className="w-full flex flex-wrap py-4 border-b border-black gap-6 mb-6"
     >
       <Search />
       <div className="flex gap-4">

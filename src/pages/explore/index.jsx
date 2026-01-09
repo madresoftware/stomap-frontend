@@ -8,7 +8,7 @@ export default function ExplorePage() {
   const { providers } = useLoaderData()
 
   return (
-    <div className="bg-green-200 size-full px-5">
+    <div className="size-full px-5">
       <div className="h-16 md:h-24"></div>
       <div className="mx-auto flex flex-col items-center h-full max-w-5xl">
         <Filters />
