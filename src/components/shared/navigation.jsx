@@ -22,8 +22,8 @@ export function Navigation() {
       <header className="block md:hidden fixed top-0 w-full z-10 text-sm">
         <nav className="bg-white rounded-b-3xl drop-shadow-xs w-full overflow-hidden">
           <div className="h-16 flex items-center justify-between px-4 relative z-10">
-            <Link key={"logo"} to={"/"} className='w-max'>
-              <Logo className="h-8 w-max" />
+            <Link key={"logo"} to={"/"}>
+              <Logo className="w-28 h-full" />
             </Link>
             <button
               onClick={toggleMenu}
